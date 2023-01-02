@@ -1,0 +1,264 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class Calc implements ActionListener
+{
+    JFrame jf;
+    JTextField tf;
+    String op;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,beql,bmul,bdiv,bsum,bdif,bdot;
+    int er=0,count=0;
+
+    Calc(){
+    jf = new JFrame("CALCULATOR");
+    jf.setLayout(null);
+    jf.setBackground(Color.BLUE);
+
+    tf = new JTextField("ENTER HERE!");
+    tf.setEditable(false);
+    Font font1 = new Font("Arial", Font.BOLD, 17);
+    tf.setFont(font1);
+    er=1;
+    b0=new JButton("0");
+    b1=new JButton("1");
+    b2=new JButton("2");
+    b3=new JButton("3");
+    b4=new JButton("4");
+    b5=new JButton("5");
+    b6=new JButton("6");
+    b7=new JButton("7");
+    b8=new JButton("8");
+    b9=new JButton("9");
+    beql=new JButton("=");
+    bdot=new JButton(".");
+    bsum=new JButton("+");
+    bdif=new JButton("-");
+    bdiv=new JButton("/");
+    bmul=new JButton("*");
+
+    beql.setBackground(Color.yellow);
+    bsum.setBackground(Color.green);
+    bsum.setForeground(Color.BLACK);
+    bdif.setBackground(Color.green);
+    bdif.setForeground(Color.BLACK);
+    bmul.setBackground(Color.green);
+    bmul.setForeground(Color.black);
+    bdiv.setBackground(Color.green);
+    bdiv.setForeground(Color.black);
+    bdot.setBackground(Color.LIGHT_GRAY);
+
+    tf.setBounds(20,20,260,50);
+    b0.setBounds(20,310,50,50);
+    b1.setBounds(20,240,50,50);
+    b4.setBounds(20,170,50,50);
+    b7.setBounds(20,100,50,50);
+    bdot.setBounds(90,310,50,50);
+    b2.setBounds(90,240,50,50);
+    b5.setBounds(90,170,50,50);
+    b8.setBounds(90,100,50,50);
+    b3.setBounds(160,240,50,50);
+    b6.setBounds(160,170,50,50);
+    b9.setBounds(160,100,50,50);
+    beql.setBounds(160,310,50,50);
+    bsum.setBounds(230,310,50,50);
+    bdif.setBounds(230,240,50,50);
+    bmul.setBounds(230,170,50,50);
+    bdiv.setBounds(230,100,50,50);
+
+    b0.addActionListener(this);
+    b1.addActionListener(this);
+    b2.addActionListener(this);
+    b3.addActionListener(this);
+    b4.addActionListener(this);
+    b5.addActionListener(this);
+    b6.addActionListener(this);
+    b7.addActionListener(this);
+    b8.addActionListener(this);
+    b9.addActionListener(this);
+    bsum.addActionListener(this);
+    bdif.addActionListener(this);
+    bmul.addActionListener(this);
+    bdiv.addActionListener(this);
+    bdot.addActionListener(this);
+    beql.addActionListener(this);
+
+    jf.add(tf);
+    jf.add(b0);
+    jf.add(b1);
+    jf.add(b2);
+    jf.add(b3);
+    jf.add(b4);
+    jf.add(b5);
+    jf.add(b6);
+    jf.add(b7);
+    jf.add(b8);
+    jf.add(b9);
+    jf.add(bdot);
+    jf.add(beql);
+    jf.add(bsum);
+    jf.add(bdif);
+    jf.add(bmul);
+    jf.add(bdiv);
+    jf.add(beql);
+
+    jf.setSize(315,437);
+    jf.setVisible(true);
+    jf.setResizable(false);
+    jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==b0){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("0"));
+        }
+        if(e.getSource()==b1){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("1"));
+        }
+        if(e.getSource()==b2){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("2"));
+        }
+        if(e.getSource()==b3){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("3"));
+        }
+        if(e.getSource()==b4){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("4"));
+        }
+        if(e.getSource()==b5){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("5"));
+        }
+        if(e.getSource()==b6){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("6"));
+        }
+        if(e.getSource()==b7){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("7"));
+        }
+        if(e.getSource()==b8){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("8"));
+        }
+        if(e.getSource()==b9){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("9"));
+        }
+        if(e.getSource()==bdot){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            tf.setText(tf.getText().concat("."));
+        }
+        if(e.getSource()==bsum){
+            if(tf.getText()!="" && er!=1)
+                count++;
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            op="+";
+            tf.setText(tf.getText().concat("+"));
+        }
+        if(e.getSource()==bdif){
+            if(tf.getText()!="" && er!=1)
+                count++;
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            op="-";
+            tf.setText(tf.getText().concat("-"));
+        }
+        if(e.getSource()==bmul){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            count++;
+            op="*";
+            tf.setText(tf.getText().concat("*"));
+        }
+        if(e.getSource()==bdiv){
+            if(er==1){
+                tf.setText("");
+                er=0;
+            }
+            count++;
+            op="/";
+            tf.setText(tf.getText().concat("/"));
+        }
+        if(e.getSource()==beql){
+            float x,y,result=0;
+            if(er==1)
+                tf.setText(tf.getText());
+            else {
+                String s=tf.getText();
+                int i=0;
+                char p=s.charAt(i);
+                while(p!=op.charAt(0)) {
+                    p=s.charAt(i);
+                    i++;
+                }
+                x=Float.parseFloat(s.substring(0, i-1));
+                y=Float.parseFloat(s.substring(i,s.length()));
+                switch(p) {
+                    case '+':result=x+y; 
+                             break;
+                    case '-':result=x-y; 
+                             break;
+                    case '*':result=x*y; 
+                            break;
+                    case '/':result=x/y; 
+                             if(y==0)
+                                er=1;
+                            break;
+                }
+                    tf.setText(""+result);
+                
+            }
+            count=0;
+        }
+    } 
+}
+public class calculator {
+    public static void main(String a[]) {
+        new Calc();
+    }
+}
